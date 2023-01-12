@@ -6,28 +6,25 @@ public class BrowserHistory {
         Scanner scanner = new Scanner(System.in);
         String address = scanner.nextLine();
         ArrayDeque<String> history = new ArrayDeque<>();
-            String currentURL = "";
+
         while (!address.equals("Home")) {
             if (address.equals("back")) {
                 if (history.size() <= 1) {
                     System.out.println("no previous URLs");
                     address = scanner.nextLine();
                     continue;
-                } else{
-                    currentURL = history.pop();
-                    System.out.println(currentURL);
+                } else {
+                    history.pop();
                 }
 
 
             } else {
-                if (!currentURL.equals("")){
-                history.push(currentURL);
 
-                }
-                currentURL=address;
-            System.out.println(currentURL);
+                history.push(address);
+
+
             }
-
+                System.out.println(history.peek());
 
 
             address = scanner.nextLine();
