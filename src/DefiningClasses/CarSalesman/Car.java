@@ -1,15 +1,13 @@
 package DefiningClasses.CarSalesman;
 
-import DefiningClasses.RawData.Engine;
-
 public class Car {
     //model, engine, weight, and color.
     private String model;
-    private Engine5 engine;
+    private Engines engine;
     private  String weight;
     private String colour;
 
-    public Car(String model, Engine5 engine) {
+    public Car(String model, Engines engine) {
         this.model = model;
         this.engine = engine;
         this.weight = "n/a";
@@ -24,7 +22,7 @@ public class Car {
         return model;
     }
 
-    public Engine5 getEngine() {
+    public Engines getEngine() {
         return engine;
     }
 
@@ -49,7 +47,7 @@ public class Car {
         //Efficiency: {EngineEfficiency}
         //Weight: {CarWeight}
         //Color: {CarColor}"
-        return String.format("%s:%n%s:%nPower: %d%nDisplacement: %d%nEfficiency: %s%nWeight: %s%nColor: %s",
+        return String.format("%s:%n%s:%nPower: %d%nDisplacement: %s%nEfficiency: %s%nWeight: %s%nColor: %s",
                 getModel(),getEngine().getModel(),getEngine().getPower(),getEngine().getDisplacement(),getEngine().getEfficiency()
         ,getWeight(),getColour());
     }

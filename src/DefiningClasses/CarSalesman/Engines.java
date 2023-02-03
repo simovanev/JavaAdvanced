@@ -1,15 +1,15 @@
 package DefiningClasses.CarSalesman;
 
-public class Engine5 {
+public class Engines {
     private String model;
     private int power;
-    private int displacement;
+    private String displacement;
     private String efficiency;
 
-    public Engine5(String model, int power, int displacement) {
+    public Engines(String model, int power) {
         this.model = model;
         this.power = power;
-        this.displacement = displacement;
+        this.displacement =  "n/a";
         this.efficiency = "n/a";
     }
 
@@ -21,7 +21,11 @@ public class Engine5 {
         return power;
     }
 
-    public int getDisplacement() {
+    public void setDisplacement(String displacement) {
+        this.displacement = displacement;
+    }
+
+    public String getDisplacement() {
         return displacement;
     }
 
