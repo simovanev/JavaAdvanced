@@ -13,7 +13,7 @@ public class Trainer {
         return collection;
     }
 
-    public Trainer(String trainerName) {
+    public Trainer(String trainerName, List<Pokemon> value) {
         this.trainerName = trainerName;
         this.badgeNumber=0;
         this.collection= new ArrayList<>();

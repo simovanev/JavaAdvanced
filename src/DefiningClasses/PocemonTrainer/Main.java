@@ -1,6 +1,7 @@
 package DefiningClasses.PocemonTrainer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,5 +23,9 @@ public class Main {
 
             input= scanner.nextLine();
         }
+        List<Trainer> trainersList= allTrainers.entrySet()
+                .stream()
+                .map(t->new Trainer(t.getKey(),t.getValue()))
+                .collect(Collectors.toList());
     }
 }
