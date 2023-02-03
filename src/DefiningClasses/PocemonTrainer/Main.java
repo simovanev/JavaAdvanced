@@ -27,5 +27,13 @@ public class Main {
                 .stream()
                 .map(t->new Trainer(t.getKey(),t.getValue()))
                 .collect(Collectors.toList());
+        String command= scanner.nextLine();
+        while (!command.equals("End")){
+        for (Trainer tr: trainersList){
+            tr.ifContain(command);
+        }
+            command= scanner.nextLine();
+        }
+
     }
 }
