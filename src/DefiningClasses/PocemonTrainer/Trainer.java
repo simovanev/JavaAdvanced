@@ -13,32 +13,46 @@ public class Trainer {
         return collection;
     }
 
-    public Trainer(String trainerName, List<Pokemon> value) {
+    public Trainer(String trainerName, List<Pokemon> collection) {
         this.trainerName = trainerName;
         this.badgeNumber=0;
-        this.collection= new ArrayList<>();
+        this.collection= collection;
 
     }
-    public void ifContain(String command){
-        for (Pokemon pokemon: this.collection){
-          if ( pokemon.getElement().equals(command)){
-              this.badgeNumber+=1;
-          }else allLose10();
-
-          }
-        }
-
-    private void allLose10() {
-        for (Pokemon pokemon: collection){
-            pokemon.setHealth(pokemon.getHealth()-10);
-
-        }
-        for (int i = 0; i < collection.size(); i++) {
-            if (collection.get(i).getHealth()<=0){
-                collection.remove(i);
-                i--;
+    private boolean isExist(String command) {
+        for (Pokemon pokemon : collection) {
+            if (pokemon.getElement().equals(command)) {
+                return true;
             }
         }
+        return false;
+    }
+    public void commandExecuting(String command) {
+
+        if (isExist(command)) {
+            badgeNumber += 1;
+        } else {
+
+            for (int i = 0; i < collection.size(); i++) {
+                collection.get(i).setHealth(collection.get(i).getHealth() - 10);
+                if (collection.get(i).getHealth() <= 0) {
+                    collection.remove(i);
+                    i--;
+                }
+            }
+        }
+    }
+
+
+
+
+    public int getBadgeNumber() {
+        return badgeNumber;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %d %d",trainerName,this.badgeNumber,collection.size());
     }
 }
 

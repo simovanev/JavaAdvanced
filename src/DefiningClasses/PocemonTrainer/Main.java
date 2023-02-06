@@ -23,17 +23,20 @@ public class Main {
 
             input= scanner.nextLine();
         }
-        List<Trainer> trainersList= allTrainers.entrySet()
+        List<Trainer> trainersList = allTrainers.entrySet()
                 .stream()
-                .map(t->new Trainer(t.getKey(),t.getValue()))
+                .map(t -> new Trainer(t.getKey(), t.getValue()))
                 .collect(Collectors.toList());
+
         String command= scanner.nextLine();
         while (!command.equals("End")){
         for (Trainer tr: trainersList){
-            tr.ifContain(command);
+            tr.commandExecuting(command);
         }
             command= scanner.nextLine();
         }
+        trainersList.stream().sorted(Comparator.comparing(Trainer::getBadgeNumber)
+                .reversed()).forEach(e-> System.out.println(e));
 
     }
 }
