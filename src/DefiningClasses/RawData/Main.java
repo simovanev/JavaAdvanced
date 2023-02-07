@@ -6,40 +6,36 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int nCars = Integer.parseInt(scanner.nextLine());
-        Map<String , List< Car>> typeMap= new HashMap<>();
-        for (int icar = 0; icar < nCars; icar++) {
-            String[] input = scanner.nextLine().split("\\s+");
-            String model = input[0];
-            int engineSpeed = Integer.parseInt(input[1]);
-            int enginePower = Integer.parseInt(input[2]);
-            int cargoWeight = Integer.parseInt(input[3]);
-            String type = input[4];
-            double pressure1 = Double.parseDouble(input[5]);
-            int age1 = Integer.parseInt(input[6]);
-            double pressure2 = Double.parseDouble(input[7]);
-            int age2 = Integer.parseInt(input[8]);
-            double pressure3 = Double.parseDouble(input[9]);
-            int age3 = Integer.parseInt(input[10]);
-            double pressure4 = Double.parseDouble(input[11]);
-            int age4 = Integer.parseInt(input[12]);
-            Engine engine = new Engine(engineSpeed, enginePower);
-            Cargo cargo = new Cargo(cargoWeight, type);
-            Tires tires = new Tires(pressure1, age1, pressure2, age2, pressure3, age3, pressure4, age4);
-
-            Car car = new Car(model, engine, cargo, tires);
-
-            typeMap.putIfAbsent(type, new ArrayList<>());
-            typeMap.get(type).add(car);
-        }
-
+        Map<String , List<Car>> carsByCargoType= new HashMap<>();
+        for (int i = 0; i < nCars; i++) {
+            String[]input= scanner.nextLine().split("\\s+");
+            //"{Model} {EngineSpeed} {EnginePower} {CargoWeight} {CargoType} {Tire1Pressure} {Tire1Age} {Tire2Pressure}
+            // {Tire2Age} {Tire3Pressure} {Tire]’3Age} {Tire4Pressure} {Tire4Age}
+            String model= input[0];
+            Engine engine= new Engine(Integer.parseInt(input[1]),Integer.parseInt(input[2]));
+            Cargo cargo= new Cargo(Integer.parseInt(input[3]), input[4]);
+            List<Tires> tireList= new ArrayList<>();
+            for (int j = 5; j <=12 ; j+=2) {
+                Tires tire = new Tires(Double.parseDouble(input[j]), Integer.parseInt(input[j + 1]));
+                tireList.add(tire);
+            }
+            String cargoType= input[4];
+            Car car= new Car(model,engine,cargo,tireList);
+            carsByCargoType.putIfAbsent(cargoType,new ArrayList<>() );
+            carsByCargoType.get(cargoType).add(car);
+            
+            
             String command= scanner.nextLine();
-
-           typeMap.get(command).forEach(e->e.extract(command));
-
-
-
+            if (command.equals("fragile")){
                 
+                //todo
+            } else if (command.equals("flamable")) {
+                //todo
+                
+            }
+
 
         }
     }
+}
 

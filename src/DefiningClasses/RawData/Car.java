@@ -1,36 +1,18 @@
 package DefiningClasses.RawData;
 
-public class Car {
-    private String model;
-    private Engine engine;
-    private Cargo cargo;
-    private Tires tires;
+import java.util.List;
 
-    public Car(String model, Engine engine, Cargo cargo, Tires tires) {
+public class Car {
+    //model, engine, cargo, and a collection of exactly 4 tires
+    private String model;
+    private  Engine engine;
+    private Cargo cargo;
+    private List<Tires> tires;
+
+    public Car(String model, Engine engine, Cargo cargo, List<Tires> tires) {
         this.model = model;
         this.engine = engine;
         this.cargo = cargo;
         this.tires = tires;
-
-
-    }
-
-    public void extract (String command) {
-        switch (command) {
-            case "fragile":
-                double tirePressure = tires.getMinPressure();
-                if (tirePressure < 1) {
-                    System.out.println(model);
-                }
-                break;
-            case "flamable":
-
-                if (engine.getEnginePower() > 250) {
-                    System.out.println(model);
-
-                }
-                break;
-
-        }
     }
 }

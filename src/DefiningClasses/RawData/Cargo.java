@@ -1,16 +1,11 @@
 package DefiningClasses.RawData;
 
 public class Cargo {
-    private int cargoWeight;
-    private  String type;
+private int weight;
+private String type;
 
-    public String getType() {
-        return type;
-    }
-
-    public Cargo(int cargoWeight, String type) {
-        this.cargoWeight = cargoWeight;
+    public Cargo(int weight, String type) {
+        this.weight = weight;
         this.type = type;
-
     }
 }

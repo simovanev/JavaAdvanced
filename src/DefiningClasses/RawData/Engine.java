@@ -1,15 +1,11 @@
 package DefiningClasses.RawData;
 
 public class Engine {
-   private int engineSpeed;
-   private int enginePower;
+ private int speed;
+ private int power;
 
-   public int getEnginePower() {
-      return enginePower;
-   }
-
-   public Engine(int engineSpeed, int enginePower) {
-      this.engineSpeed = engineSpeed;
-      this.enginePower = enginePower;
+   public Engine(int speed, int power) {
+      this.speed = speed;
+      this.power = power;
    }
 }
