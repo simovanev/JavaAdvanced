@@ -15,7 +15,8 @@ public class AcademyGraduation {
             double[] grades= Arrays.stream(scanner.nextLine().split(" "))
                     .mapToDouble(Double::parseDouble)
                     .toArray();
-            double averageGrade=Arrays.stream(grades).sum()/ grades.length;
+           // double averageGrade=Arrays.stream(grades).sum()/ grades.length;
+            double averageGrade= Arrays.stream(grades).average().orElse(0);
             student.put(name,averageGrade);
             System.out.printf("%s is graduated with %f%n",name,averageGrade);
 
