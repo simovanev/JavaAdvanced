@@ -54,7 +54,8 @@ public class Main {
             input = scanner.nextLine();
         }
         String searchName = scanner.nextLine();
-     //   personMap.get(searchName).toString();
+        System.out.println(personMap.get(searchName));
+
 
     }
 }

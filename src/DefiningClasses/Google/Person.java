@@ -1,5 +1,7 @@
 package DefiningClasses.Google;
 
+import DefiningClasses.PocemonTrainer.Pokemon;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Person {
     public void setCompany(Company company) {
         this.company = company;
     }
+
     public Person(String name) {
         this.name = name;
         this.parentList = new ArrayList<>();
@@ -52,21 +55,53 @@ public class Person {
     }
 
 
-
     @Override
     public String toString() {
-        StringBuilder output= new StringBuilder();
+        StringBuilder output = new StringBuilder();
         output.append(name);
         output.append(System.lineSeparator());
         output.append("Company:").append(System.lineSeparator());
-        if (company!=null){
+        if (company != null) {
 
-        output.append(company.getCompanyName()).append(" ")
-                .append(company.getDepartment()).append(" ")
-                .append(company.getSalary())
-                .append(System.lineSeparator());
+            output.append(company.getCompanyName()).append(" ")
+                    .append(company.getDepartment()).append(" ")
+                    .append(company.getSalary())
+                    .append(System.lineSeparator());
+        }
+        output.append("Car:").append(System.lineSeparator());
+        if (car != null) {
+            output.append(car.getModel()).append(" ")
+                    .append(car.getSpeed())
+                    .append(System.lineSeparator());
+        }
+        output.append("Pokemon:").append(System.lineSeparator());
+        if (pokemonList.size() > 0) {
+            for (Pokemons pokemon : pokemonList) {
+                output.append(pokemon.getName()).append(" ")
+                        .append(pokemon.getType())
+                        .append(System.lineSeparator());
+            }
+        }
+
+        output.append("Parents:").append(System.lineSeparator());
+        if (parentList.size() > 0) {
+            for (Parens parent : parentList) {
+                output.append(parent.getName()).append(" ")
+                        .append(parent.getbDay())
+                        .append(System.lineSeparator());
+            }
+
+        }
+        output.append("Children:").append(System.lineSeparator());
+        if (childrenList.size()>0){
+            for (Children child: childrenList){
+            output.append(child.getName()).append(" ")
+                    .append(child.getbDay())
+                    .append(System.lineSeparator());
+
+            }
         }
 
         return output.toString();
-    }
+}
 }

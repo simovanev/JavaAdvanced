@@ -8,4 +8,12 @@ public class Car {
         this.model = model;
         this.speed = speed;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getSpeed() {
+        return speed;
+    }
 }
