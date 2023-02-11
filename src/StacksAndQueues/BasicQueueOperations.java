@@ -13,7 +13,7 @@ public class BasicQueueOperations {
         ArrayDeque<Integer> stack=new ArrayDeque<>();
         for (int i = 0; i < n; i++) {
             int currentNum= scanner.nextInt();
-            stack.offer(currentNum);
+            stack.add(currentNum);
         }
         for (int i = 0; i < s; i++) {
             stack.pop();
