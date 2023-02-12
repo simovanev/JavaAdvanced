@@ -55,25 +55,26 @@ public class PastryShop {
             System.out.println("Liquids left: none");
         } else {
             System.out.print("Liquids left: ");
-            while (!deque.isEmpty()) {
-                System.out.print(deque.pop() + " ");
+            while (deque.size()>1) {
+                System.out.print(deque.pop() + ", ");
             }
-            System.out.println();
+            System.out.println(deque.pop());
         }
         if (stack.isEmpty()) {
             System.out.println("Ingredients left: none");
         } else {
             System.out.print("Ingredients left: ");
-            while (!stack.isEmpty()) {
-                System.out.print(stack.pop() + " ");
+
+            while (stack.size()>1) {
+                System.out.print(stack.pop() + ", ");
 
             }
-            System.out.println();
+            System.out.println(stack.pop());
         }
         System.out.println("Biscuit: " + biscuit);
         System.out.println("Cake: " + cake);
-        System.out.println("Pastry: " + pastry);
         System.out.println("Pie: " + pie);
+        System.out.println("Pastry: " + pastry);
 
     }
 }
