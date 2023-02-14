@@ -26,7 +26,7 @@ public class Present {
 
     @Override
     public String toString() {
-        return String.format("Present %s (%.2f) for a %s%n",name,weight,gender);
+        return String.format("Present %s (%.2f) for a %s",name,weight,gender);
 
     }
 }

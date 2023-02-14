@@ -50,15 +50,12 @@ public class Bag {
     public  Present getPresent(String name){
        return this.data.stream()
                .filter(e -> e.getName().equals(name))
-               .toList()
+               .collect(Collectors.toList())
                .get(0);
     }
-    //•	report() method – returns a string in the following format (print the presents in order of appearance):
-    //o	"{color of Bag} bag contains:
-    //{Present1}
-    //{Present2}
+
     public  String report(){
-       String currentPresent= this.data.stream().map(p->p.toString()).collect(Collectors.joining("%n"));
-        return String.format("%s bag contains:%n%s",getColor(),currentPresent);
+       String currentPresent= this.data.stream().map(p->p.toString()).collect(Collectors.joining("\n"));
+        return String.format("%s bag contains:\n%s",getColor(),currentPresent);
     }
 }
