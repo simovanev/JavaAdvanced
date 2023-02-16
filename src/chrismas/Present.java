@@ -1,4 +1,4 @@
-package ExamPreparation.chrismas;
+package chrismas;
 
 public class Present {
 

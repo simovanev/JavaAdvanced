@@ -1,4 +1,4 @@
-package ExamPreparation.cafe;
+package cafe;
 
 import java.util.ArrayList;
 import java.util.Comparator;

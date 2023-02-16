@@ -1,4 +1,4 @@
-package ExamPreparation.cafe;
+package cafe;
 
 public class Employee {
 

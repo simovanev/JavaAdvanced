@@ -1,4 +1,4 @@
-package ExamPreparation.chrismas;
+package chrismas;
 
 public class Main {
     public static void main(String[] args) {
