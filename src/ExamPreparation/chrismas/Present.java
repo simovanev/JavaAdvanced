@@ -1,4 +1,4 @@
-package ExamPreparation.Chrismas;
+package ExamPreparation.chrismas;
 
 public class Present {
 

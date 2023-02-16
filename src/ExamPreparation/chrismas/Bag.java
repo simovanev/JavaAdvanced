@@ -1,4 +1,4 @@
-package ExamPreparation.Chrismas;
+package ExamPreparation.chrismas;
 
 import java.util.ArrayList;
 import java.util.Comparator;

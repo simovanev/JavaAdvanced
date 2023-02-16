@@ -12,6 +12,14 @@ public class Employee {
         this.country = country;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return String.format("Employee: %s, %d from %s",name,age,country);
